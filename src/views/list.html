@@ -1,9 +1,11 @@
-<div class="post-list">
-    <div class="crop">
-        <img ng-src="" alt="No Image" />
+<div class="container">
+    <post-header selected="postList"></post-header>
+    <div class="loading textAlign-center" ng-show="list.length == 0">
+        <img src="assets/images/loading.gif" />
     </div>
-    <h2>{{ postTitle }}</h2>
-
-    <p>{{ postBody }}</p>
-
+    <div ng-hide="list.length == 0">
+        <div ng-repeat="post in list">
+            <post-list title="{{post.title}}" body="{{post.body}}"></post-list>
+        </div>
+    </div>
 </div>

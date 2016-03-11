@@ -11,6 +11,6 @@ angular.module('postacularApp')
         link: function(scope, element, attrs) {
 
         },
-        templateUrl: 'views/header.html'
+        templateUrl: 'views/header.tpl.html'
     }
 });

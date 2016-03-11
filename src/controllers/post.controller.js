@@ -3,15 +3,15 @@
 angular.module('postacularApp')
 
     .controller('PostListCtrl', ['$scope', 'postAPI', function($scope, postAPI) {
-        var me = this;
-        me.list = [];
+        $scope.list = [];
 
-        (function() {
-            postAPI.search().then( function(data) {
-                me.list = data.items;
+        $scope.getPosts = function() {
+            postAPI.getPosts().then( function(data) {
+                $scope.list = data;
             });
-        })();
-
+        };
+        
+        $scope.getPosts();
     }])
 
     .controller('PostAddCtrl', ['$scope', 'postAPI', function($scope, postAPI) {

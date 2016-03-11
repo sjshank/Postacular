@@ -4,9 +4,7 @@
 
 'use strict';
 
-angular.module('postacularApp', ['ngRoute', 'ngSanitize', 'ui.bootstrap'])
-
-    .value('flickrURL', 'http://api.flickr.com/services/feeds/photos_public.gne?tags=potato&tagmode=all&format=json&jsoncallback=JSON_CALLBACK')
+angular.module('postacularApp', ['ngRoute', 'ui.bootstrap'])
 
     .config(['$routeProvider', function($routeProvider) {
         $routeProvider
@@ -25,15 +23,10 @@ angular.module('postacularApp', ['ngRoute', 'ngSanitize', 'ui.bootstrap'])
                 redirectTo:'/'
             });
     }])
+    
+.value('postListURL', 'http://jsonplaceholder.typicode.com/posts/')
+.value('addPostURL', '')
+.run(['$rootScope', function(rootScope){
+    rootScope.subHeading = "An AngularJS framework based web application to add and bring back some posts from any API.";
+}]);
 
-    .filter('tidyAuthor', function() {
-        return function(input) {
-            return input.match(/\((.+?)\)/)[1];
-        };
-    })
-
-    .filter('htmlToPlaintext', function() {
-        return function(text) {
-            return String(text).replace(/<[^>]+>/gm, '');
-        }
-    });

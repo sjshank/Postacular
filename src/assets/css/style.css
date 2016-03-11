@@ -1,3 +1,7 @@
+body{
+    background: #eee !important;
+    background-color: #eee !important;
+}
 h1 {
   overflow: hidden;
   white-space: nowrap;
@@ -42,16 +46,6 @@ h1 {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.description {
-  overflow: hidden;
-}
-.description p {
-  float: left;
-  margin-right: 5px;
-}
-.details {
-  margin-right: 10px;
-}
 ul.tags {
   display: inline;
   margin: 0;
@@ -64,4 +58,14 @@ ul.tags li {
 }
 ul.tags li + li:before {
   content: ", ";
+}
+.post-form {
+   margin-left: 25%;
+   width: 50%; 
+}
+.textAlign-center {
+    text-align: center;
+}
+textarea{
+    resize: none !important;
 }

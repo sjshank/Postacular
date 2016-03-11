@@ -5,14 +5,13 @@ angular.module('postacularApp')
 .directive('postList', function() {
     return {
         restrict: 'E',
+        templateUrl: 'views/post.tpl.html',
         scope: {
-            postId: '@',
-            postTitle: '@',
-            postBody: '@'
+            title: '@',
+            body: '@'
         },
         link: function(scope, element, attrs, ctrl) {
-
-        },
-        templateUrl: 'views/list.html'
+            console.log("inside directive");
+        }
     }
 });
