@@ -1,7 +1,19 @@
+<!-- HTML for adding new post -->
 <div class="container">
 
     <post-header selected="addPost"></post-header>
-    <div class="row">
+
+    <!-- To display error message -->
+    <div ng-if="hasError">
+        <ng-include src="'error.tpl.html'" ></ng-include>
+    </div>
+
+    <!-- To display success message -->
+    <div ng-if="success">
+        <ng-include src="'success.tpl.html'" ></ng-include>
+    </div>
+
+    <div ng-hide="success" class="row">
         <form role="form" class="post-form" ng-submit="addPost()">
             <div>
                 <h3>Add New Post</h3>

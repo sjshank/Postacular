@@ -1,5 +1,6 @@
 /*
-*	
+*	app.js for initializing angular module container.
+*   Defining routes, value and rootscope.
 */
 
 'use strict';
@@ -24,8 +25,11 @@ angular.module('postacularApp', ['ngRoute', 'ui.bootstrap'])
             });
     }])
     
-.value('postListURL', 'http://jsonplaceholder.typicode.com/posts/')
-.value('addPostURL', '')
+.value('URL', 'http://jsonplaceholder.typicode.com/posts/')
+.constant('appConstants', {
+        SERVICE_ERROR : "Service is temporarily unavailable. Please try after sometime.",
+        SUCCESS_MSG : "Congrajulations ! Your post has been added successfully."
+})
 .run(['$rootScope', function(rootScope){
     rootScope.subHeading = "An AngularJS framework based web application to add and bring back some posts from any API.";
 }]);

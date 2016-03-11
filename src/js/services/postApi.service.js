@@ -1,10 +1,16 @@
+/*
+*   Service for calling GET/POST call to typicode API URL
+*
+*/
+
 'use strict';
 angular.module('postacularApp')
-    .factory('postAPI', ['$q', '$http', 'postListURL', 'addPostURL', function($q, $http, listURL, addURL) {
+    .factory('postAPI', ['$q', '$http', 'URL', function($q, $http, url) {
+        
         return new function() {
             this.getPosts = function() {
                 var deferred = $q.defer();
-                $http.get(listURL).
+                $http.get(url).
                     success(function(data, status, headers, config) {
                         deferred.resolve(data);
                     }).
@@ -14,9 +20,14 @@ angular.module('postacularApp')
                 return deferred.promise;
             };
             
-            this.addPost = function(){
+            this.addPost = function(data){
+                var config = {
+                    headers : {
+                        'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
+                    }
+                };
                 var deferred = $q.defer();
-                $http.post(addURL).
+                $http.post(url, data, config).
                     success(function(data, status, headers, config) {
                         deferred.resolve(data);
                     }).

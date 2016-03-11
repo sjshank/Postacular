@@ -6,7 +6,7 @@ angular.module('postacularApp')
     return {
         restrict: 'E',
         scope: {
-            selected: '@selected'
+            selected: '@'
         },
         link: function(scope, element, attrs) {
 

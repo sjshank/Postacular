@@ -1,7 +1,9 @@
+<!-- HTML for rendering posts -->
 <div class="container">
     <post-header selected="postList"></post-header>
     <div class="loading textAlign-center" ng-show="list.length == 0">
-        <img src="assets/images/loading.gif" />
+        <img src="./images/loading.gif" />
+        <p>Loading...</p>
     </div>
     <div ng-hide="list.length == 0">
         <div ng-repeat="post in list">

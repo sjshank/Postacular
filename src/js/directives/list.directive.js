@@ -11,7 +11,6 @@ angular.module('postacularApp')
             body: '@'
         },
         link: function(scope, element, attrs, ctrl) {
-            console.log("inside directive");
         }
     }
 });
